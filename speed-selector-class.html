@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+	
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css" media="screen">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+	<style type="text/css">
+
+	</style>
+
+</head>
+
+<body> 
+	
+	<div class="main-body">
+
+		<h1>ID V Class - speed test - Class</h1>
+
+		<p>Creates 9999 list elements and selects the last one which has a class. The result is in milliseconds. Refresh the page to see try again (Please note browsers and machines can differ dramatically).</p>
+
+		<p><a href="speed-selector-ID.html">Click here to view the ID test</a>
+
+		<p><a href="index.html"><< Back to main page</a></p>
+
+		<p class="result"></p>
+
+		<script type="text/javascript">
+		
+			var start = new Date().getTime();
+		
+			for (i = 0; i < 10000; i++) {
+			
+				if (i == 9999) {
+					
+					document.write('<li class="select-this">' + i + '</li>');
+					
+				}
+				
+				else {
+				
+					document.write('<li>' + i + '</li>');
+				
+				}
+			    
+			}
+			
+			$('.select-this').css('color','blue');
+			
+			var end = new Date().getTime();
+			var time = end - start;
+			$('.result').html('Execution time: ' + time);
+		
+		</script>
+
+		<br><br>
+        <a href="http://function.webknit.co.uk/">www.function.webknit.co.uk</a>
+
+	</div><!-- .main-body -->
+
+</body>
+</html>
+
