@@ -19,7 +19,7 @@
 
 		<h1>ID V Class - speed test - Class</h1>
 
-		<p>Creates 9999 list elements and selects the last one which has a class. The result is in milliseconds. Refresh the page to see try again (Please note browsers and machines can differ dramatically).</p>
+		<p>Creates 9999 list elements and selects the last one which has a class. The result is in microseconds (miliseconds * 1000). Refresh the page to see try again (Please note browsers and machines can differ dramatically).</p>
 
 		<p><a href="speed-selector-ID.html">Click here to view the ID test</a>
 
@@ -27,31 +27,42 @@
 
 		<p class="result"></p>
 
+		<button class="start">Run script</button>
+
+		<ul class="list"></ul>
+
 		<script type="text/javascript">
+
+			$('.start').click(timerfunction);
+
+			function timerfunction() {
 		
-			var start = new Date().getTime();
-		
-			for (i = 0; i < 10000; i++) {
-			
-				if (i == 9999) {
+				for (i = 0; i < 10000; i++) {
+				
+					if (i == 9999) {
+						
+						$('.list').append('<li class="select-this">' + i + '</li>');
+						
+					}
 					
-					document.write('<li class="select-this">' + i + '</li>');
+					else {
 					
+						$('.list').append('<li>' + i + '</li>');
+					
+					}
+				    
 				}
+
+				var start = new Date().getTime();
 				
-				else {
+				$('.select-this').css('color','blue');
 				
-					document.write('<li>' + i + '</li>');
-				
-				}
-			    
+				var end = new Date().getTime();
+				var end = end * 1000;
+				var time = end - start;
+				$('.result').append('Execution time: ' + time + "<br>");
+
 			}
-			
-			$('.select-this').css('color','blue');
-			
-			var end = new Date().getTime();
-			var time = end - start;
-			$('.result').html('Execution time: ' + time);
 		
 		</script>
 
