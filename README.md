@@ -1,5 +1,7 @@
 The-myth-of-the--ID
 ===================
 
-The myth of the #ID is a lot of code that will accompany a ongoing blog post!
-More to follow.....
+A few tests I made for some research on a blog post
+						
+You can read the post...
+http://shaneprendergast.co.uk/css/the-myth-of-the-id/
